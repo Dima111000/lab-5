@@ -9,10 +9,8 @@ jobs:
 
     steps:
       - name: Get the current date
-        id: get-date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+        run: echo "CURRENT_DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
-      - name: print date
+      - name: Print date
         run: |
-          current_date=${{ steps.get-date.outputs.date }}
-          echo "Поточна дата: $current_date"
+          echo "Поточна дата: $CURRENT_DATE"
