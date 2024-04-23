@@ -1,0 +1,12 @@
+name: Display information about the OS
+
+on:
+  workflow_dispatch:
+
+jobs:
+  display_information_about_os:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run the command uname -v
+        run: uname -v
